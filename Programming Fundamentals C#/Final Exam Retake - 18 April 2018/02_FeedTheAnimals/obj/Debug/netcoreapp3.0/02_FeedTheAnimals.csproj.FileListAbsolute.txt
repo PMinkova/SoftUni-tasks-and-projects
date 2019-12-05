@@ -1,0 +1,11 @@
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.exe
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.deps.json
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.runtimeconfig.json
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.runtimeconfig.dev.json
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.dll
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\bin\Debug\netcoreapp3.0\02_FeedTheAnimals.pdb
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\obj\Debug\netcoreapp3.0\02_FeedTheAnimals.csprojAssemblyReference.cache
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\obj\Debug\netcoreapp3.0\02_FeedTheAnimals.AssemblyInfoInputs.cache
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\obj\Debug\netcoreapp3.0\02_FeedTheAnimals.AssemblyInfo.cs
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\obj\Debug\netcoreapp3.0\02_FeedTheAnimals.dll
+C:\Users\Petya\source\repos\Final Exam Retake18April2018\02_FeedTheAnimals\obj\Debug\netcoreapp3.0\02_FeedTheAnimals.pdb
