@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AreaOfRectangle
+namespace P04_AreaOfRectangle
 {
-    class Program
+    class AreaOfRectangle
     {
         static void Main(string[] args)
         {

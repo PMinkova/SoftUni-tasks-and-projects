@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Expression
+namespace P02_Expression
 {
-    class Program
+    class Expression
     {
         static void Main(string[] args)
         {

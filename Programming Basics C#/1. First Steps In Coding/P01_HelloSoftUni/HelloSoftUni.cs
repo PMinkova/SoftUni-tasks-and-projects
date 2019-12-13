@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace HelloSoftUni
+namespace P01_HelloSoftUni
 {
-    class Program
+    class HelloSoftUni
     {
         static void Main(string[] args)
         {
