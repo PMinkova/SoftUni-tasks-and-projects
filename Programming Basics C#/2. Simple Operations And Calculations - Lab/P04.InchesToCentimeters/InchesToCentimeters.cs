@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace _04._InchesToCentimeters
+namespace P04.InchesToCentimeters
 {
-    class Program
+    class InchesToCentimeters
     {
         static void Main(string[] args)
         {

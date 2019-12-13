@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace PetShop
+namespace P07.PetShop
 {
-    class Program
+    class PetShop
     {
         static void Main(string[] args)
         {

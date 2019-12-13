@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace _3.SquareArea
+namespace P03.SquareArea
 {
-    class Program
+    class SquareArea
     {
         static void Main(string[] args)
         {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace YardGreening
+namespace P08.YardGreening
 {
-    class Program
+    class YardGreening
     {
         static void Main(string[] args)
         {

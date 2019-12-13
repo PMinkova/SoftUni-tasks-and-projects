@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ProjectsCreation
+namespace P05.ProjectsCreation
 {
-    class Program
+    class ProjectsCreation
     {
         static void Main(string[] args)
         {

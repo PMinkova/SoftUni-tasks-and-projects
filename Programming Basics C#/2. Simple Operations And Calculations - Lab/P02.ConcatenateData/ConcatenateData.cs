@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace _2.ConcatenateData
+namespace P02.ConcatenateData
 {
-    class Program
+    class ConcatenateData
     {
         static void Main(string[] args)
         {
@@ -11,7 +11,7 @@ namespace _2.ConcatenateData
             int age = int.Parse(Console.ReadLine());
             string town = Console.ReadLine();
 
-            Console.WriteLine("You are {0} {1}, a {2}-years old person from {3}.", firtsName,lastName, age, town);
+            Console.WriteLine("You are {0} {1}, a {2}-years old person from {3}.", firtsName, lastName, age, town);
         }
     }
 }

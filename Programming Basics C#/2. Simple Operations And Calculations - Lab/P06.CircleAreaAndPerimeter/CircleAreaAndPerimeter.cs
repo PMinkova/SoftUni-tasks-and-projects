@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace _6.CircleAreaAndPerimeter
+namespace P06.CircleAreaAndPerimeter
 {
-    class Program
+    class CircleAreaAndPerimeter
     {
         static void Main(string[] args)
         {
