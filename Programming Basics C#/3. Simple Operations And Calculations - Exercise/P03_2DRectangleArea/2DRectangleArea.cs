@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _2DRectangleArea
+namespace P03_2DRectangleArea
 {
     class Program
     {

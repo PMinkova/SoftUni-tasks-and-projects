@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace _01.USDtoBGNwithMathRound
+namespace P01_USDtoBGN
 {
-    class Program
+    class USDtoBGN
     {
         static void Main(string[] args)
         {
             double usd = double.Parse(Console.ReadLine());
-            double bgn = Math.Round(usd * 1.79549, 2);
+            double bgn = 1.79549 * usd;
 
-            Console.WriteLine(bgn);     
+            Console.WriteLine("{0:F}", bgn);
         }
     }
 }

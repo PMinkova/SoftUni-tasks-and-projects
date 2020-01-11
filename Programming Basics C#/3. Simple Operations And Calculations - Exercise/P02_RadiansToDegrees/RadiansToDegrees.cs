@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RadiansToDegrees
+namespace P02_RadiansToDegrees
 {
     class Program
     {

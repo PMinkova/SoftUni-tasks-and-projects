@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AlcoholMarket
+namespace P07_AlcoholMarket
 {
     class Program
     {
@@ -23,7 +23,6 @@ namespace AlcoholMarket
             double whiskyPrice = whiskyPriceLiter * whiskyLiters;
 
             double amountAll = brandyPrice + winePrice + beerPrice + whiskyPrice;
-
 
             Console.WriteLine("{0:F2}", amountAll);
         }
