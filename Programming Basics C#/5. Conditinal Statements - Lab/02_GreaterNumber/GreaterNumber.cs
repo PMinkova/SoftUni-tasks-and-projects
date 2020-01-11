@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GreaterNumber
+namespace _02_GreaterNumber
 {
     class Program
     {

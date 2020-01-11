@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Numbers1to9
+namespace Number1to9
 {
     class Program
     {

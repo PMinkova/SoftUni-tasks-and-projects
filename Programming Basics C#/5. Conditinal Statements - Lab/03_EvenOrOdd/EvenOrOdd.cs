@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvenOrOdd
+namespace _03_EvenOrOdd
 {
     class Program
     {

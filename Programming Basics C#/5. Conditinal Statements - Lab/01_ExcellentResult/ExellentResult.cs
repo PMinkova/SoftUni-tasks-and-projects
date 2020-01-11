@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _01_ExcellentGrade
+namespace _01_ExcellentResult
 {
     class Program
     {
