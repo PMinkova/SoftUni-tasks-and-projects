@@ -2,7 +2,7 @@
 
 namespace _02_SmallShop
 {
-    class Program
+    class SmallShop
     {
         static void Main(string[] args)
         {
@@ -24,7 +24,6 @@ namespace _02_SmallShop
                 {
                     Console.WriteLine(quantity * 0.45);
                 }
-
             }
             else if (product == "water")
             {
@@ -40,7 +39,6 @@ namespace _02_SmallShop
                 {
                     Console.WriteLine(quantity * 0.70);
                 }
-
             }
             else if (product == "beer")
             {
@@ -56,7 +54,6 @@ namespace _02_SmallShop
                 {
                     Console.WriteLine(quantity * 1.10);
                 }
-
             }
             else if (product == "sweets")
             {
@@ -72,7 +69,6 @@ namespace _02_SmallShop
                 {
                     Console.WriteLine(quantity * 1.35);
                 }
-
             }
             else 
             {
@@ -88,7 +84,6 @@ namespace _02_SmallShop
                 {
                     Console.WriteLine(quantity * 1.55);
                 }
-
             }
         }
     }

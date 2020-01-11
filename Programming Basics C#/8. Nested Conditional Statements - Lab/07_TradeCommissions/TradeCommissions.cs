@@ -2,7 +2,7 @@
 
 namespace _07_TradeCommissions
 {
-    class Program
+    class TradeCommissions
     {
         static void Main(string[] args)
         {

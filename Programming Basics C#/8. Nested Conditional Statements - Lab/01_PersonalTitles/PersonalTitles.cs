@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace NestedConditionaliStatements
+namespace _01_PersonalTitles
 {
-    class Program
+    class PersonalTitles
     {
         static void Main(string[] args)
         {
@@ -31,7 +31,6 @@ namespace NestedConditionaliStatements
                     Console.WriteLine("Master");
                 }
             }
-
         }
     }
 }

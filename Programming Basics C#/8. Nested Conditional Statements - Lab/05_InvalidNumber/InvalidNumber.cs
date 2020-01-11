@@ -2,7 +2,7 @@
 
 namespace _05_InvalidNumber
 {
-    class Program
+    class InvalidNumber
     {
         static void Main(string[] args)
         {

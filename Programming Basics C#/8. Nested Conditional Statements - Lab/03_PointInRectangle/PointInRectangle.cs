@@ -2,7 +2,7 @@
 
 namespace _03_PointInRectangle
 {
-    class Program
+    class PointInRectangle
     {
         static void Main(string[] args)
         {

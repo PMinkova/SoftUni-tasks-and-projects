@@ -2,7 +2,7 @@
 
 namespace _08_SkiTrip
 {
-    class Program
+    class SkiTrip
     {
         static void Main(string[] args)
         {
@@ -48,8 +48,7 @@ namespace _08_SkiTrip
                 else if (daysStayinginHotel > 15)
                 {
                     price = priceForPresidentApartment - (0.20 * priceForPresidentApartment);
-                }
-              
+                }         
             }
             if (rating == "positive")
             {

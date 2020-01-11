@@ -2,7 +2,7 @@
 
 namespace _06_FruitShop
 {
-    class Program
+    class FruitShop
     {
         static void Main(string[] args)
         {
