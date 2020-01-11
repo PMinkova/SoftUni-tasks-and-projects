@@ -21,7 +21,6 @@ namespace _02_BonusScore
                 bonus = 0.2 * points;
             }
 
-
             if (points % 2 == 0)
             {
                 bonus += 1;

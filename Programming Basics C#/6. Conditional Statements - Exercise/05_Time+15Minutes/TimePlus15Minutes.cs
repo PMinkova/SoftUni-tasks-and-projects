@@ -19,6 +19,7 @@ namespace _05_Time_15Minutes
             {
                 currentHours -= 24;
             }
+
             if (currentMinutes < 10)
             {
                 Console.WriteLine($"{currentHours}0{currentMinutes}");

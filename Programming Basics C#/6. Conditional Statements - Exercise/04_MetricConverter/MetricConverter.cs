@@ -19,7 +19,6 @@ namespace _04_MetricConverter
                 value /= 1000;
             }
 
-
             if (unitOutput == "cm")
             {
                 value *= 100;
