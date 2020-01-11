@@ -2,7 +2,7 @@
 
 namespace _04_NewHouse
 {
-    class Program
+    class NewHouse
     {
         static void Main(string[] args)
         {
@@ -15,6 +15,7 @@ namespace _04_NewHouse
             if (flowers == "Roses")
             {
                 amount = flowerNumbers * 5;
+
                 if (flowerNumbers > 80)
                 {
                     amount *= 0.9;
@@ -23,6 +24,7 @@ namespace _04_NewHouse
             else if (flowers == "Dahlias")
             {
                 amount = flowerNumbers * 3.80;
+
                 if (flowerNumbers > 90)
                 {
                     amount *= 0.85;
@@ -31,6 +33,7 @@ namespace _04_NewHouse
             else if (flowers == "Tulips")
             {
                 amount = flowerNumbers * 2.80;
+
                 if (flowerNumbers > 80)
                 {
                     amount *= 0.85;
@@ -39,6 +42,7 @@ namespace _04_NewHouse
             else if (flowers == "Narcissus")
             {
                 amount = flowerNumbers * 3;
+
                 if (flowerNumbers < 120)
                 {
                     amount *= 1.15;
@@ -47,11 +51,13 @@ namespace _04_NewHouse
             else if (flowers == "Gladiolus")
             {
                 amount = flowerNumbers * 2.50;
+
                 if (flowerNumbers < 80)
                 {
                     amount *= 1.20;
                 }
             }
+
             if (budget - amount >= 0)
             { 
             Console.WriteLine($"Hey, you have a great garden with {flowerNumbers} {flowers} and {Math.Abs(budget - amount):F2} leva left.");

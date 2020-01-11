@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace _06_Jurney
+namespace _06_Journey
 {
-    class Program
+    class Journey
     {
         static void Main(string[] args)
         {

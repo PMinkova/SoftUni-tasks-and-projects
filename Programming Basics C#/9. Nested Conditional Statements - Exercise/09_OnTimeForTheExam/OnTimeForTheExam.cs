@@ -2,7 +2,7 @@
 
 namespace _09_OnTimeForTheExam
 {
-    class Program
+    class OnTimeForTheExam
     {
         static void Main(string[] args)
         {

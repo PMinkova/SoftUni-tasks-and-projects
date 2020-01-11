@@ -2,7 +2,7 @@
 
 namespace _08._HotelRoom
 {
-    class Program
+    class HotelRoom
     {
         static void Main(string[] args)
         {
@@ -29,6 +29,7 @@ namespace _08._HotelRoom
             {
                 priceStudio = 75.20 * nightsCount;
                 priceApartment = 68.70 * nightsCount;
+
                 if (nightsCount > 14)
                 {
                     priceStudio *= 0.80;
@@ -39,10 +40,12 @@ namespace _08._HotelRoom
                 priceStudio = 76 * nightsCount;
                 priceApartment = 77 * nightsCount;
             }
+
             if (nightsCount > 14)
             {
                 priceApartment *= 0.90;
             }
+
             Console.WriteLine($"Apartment: {priceApartment:F2} lv.");
             Console.WriteLine($"Studio: {priceStudio:F2} lv.");
         }

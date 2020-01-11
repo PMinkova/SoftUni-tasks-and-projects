@@ -2,7 +2,7 @@
 
 namespace _03_SummerOutfit
 {
-    class Program
+    class SummerOutFit
     {
         static void Main(string[] args)
         {
@@ -17,7 +17,6 @@ namespace _03_SummerOutfit
                 {
                     outfit = "Sweatshirt";
                     shoes = "Sneakers";
-
                 }
                 else if (degrees >= 25)
                 {

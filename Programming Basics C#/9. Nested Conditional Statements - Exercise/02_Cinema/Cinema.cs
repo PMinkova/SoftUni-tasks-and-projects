@@ -2,7 +2,7 @@
 
 namespace _02_Cinema
 {
-    class Program
+    class Cinema
     {
         static void Main(string[] args)
         {

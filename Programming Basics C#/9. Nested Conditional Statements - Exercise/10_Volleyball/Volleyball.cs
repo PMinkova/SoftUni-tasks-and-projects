@@ -2,18 +2,18 @@
 
 namespace _10_Volleyball
 {
-    class Program
+    class Volleyball
     {
         static void Main(string[] args)
         {
             string leapOrNot = Console.ReadLine();
-            int praznici = int.Parse(Console.ReadLine());              //2
-            int holidaysGoingHome = int.Parse(Console.ReadLine());    //3
+            int holidays = int.Parse(Console.ReadLine());              
+            int holidaysGoingHome = int.Parse(Console.ReadLine());    
 
             int holidaysInSofia = 48 - holidaysGoingHome;
-            double gamesInSofiaInPraznici = 2.0/3.0 * praznici;
+            double gamesInSofiaInHolidays = 2.0/3.0 * holidays;
             double gamesInSofia = 0.75 * holidaysInSofia;
-            double totalGamesInSofia = gamesInSofia + gamesInSofiaInPraznici;
+            double totalGamesInSofia = gamesInSofia + gamesInSofiaInHolidays;
             double gamesAtHome = holidaysGoingHome;
             double totalGames = gamesAtHome + totalGamesInSofia;
 

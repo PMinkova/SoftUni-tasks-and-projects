@@ -2,7 +2,7 @@
 
 namespace _07_OperationsBetweenNumbers
 {
-    class Program
+    class OperationsBetweenNumbers
     {
         static void Main(string[] args)
         {
@@ -10,10 +10,6 @@ namespace _07_OperationsBetweenNumbers
             int n2 = int.Parse(Console.ReadLine());
             char symbol = char.Parse(Console.ReadLine());
             double result = 0.0;
-
-            //Събиране(+), Изваждане(-), Умножение(*),
-            //Деление(/) и Модулно деление(%).
-            //
 
             if (symbol == '+' || symbol == '-' || symbol == '*' )
             {
@@ -63,7 +59,6 @@ namespace _07_OperationsBetweenNumbers
                     Console.WriteLine($"Cannot divide {n1} by zero");
                 }
             }
-
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace _05_FishingBoat
 {
-    class Program
+    class FishingBoat
     {
         static void Main(string[] args)
         {
@@ -12,8 +12,6 @@ namespace _05_FishingBoat
 
             double amount = 0;
             
-           
-
             if (season == "Spring")
             {
                 amount = 3000;
