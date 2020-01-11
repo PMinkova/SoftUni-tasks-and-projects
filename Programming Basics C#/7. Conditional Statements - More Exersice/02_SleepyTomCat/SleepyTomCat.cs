@@ -2,7 +2,7 @@
 
 namespace _02_SleepyTomCat
 {
-    class Program
+    class SleepyTomCat
     {
         static void Main(string[] args)
         {

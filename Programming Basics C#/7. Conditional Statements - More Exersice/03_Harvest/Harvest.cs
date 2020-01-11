@@ -2,7 +2,7 @@
 
 namespace _03_Harvest
 {
-    class Program
+    class Harvest
     {
         static void Main(string[] args)
         {
@@ -17,6 +17,7 @@ namespace _03_Harvest
 
             double diff = Math.Abs(litersWineNeeded - litersWineProduced);
             double wineForWorkers = diff / workorsCount;
+
             if (litersWineProduced < litersWineNeeded)
             {
                 Console.WriteLine($"It will be a tough winter! More {Math.Floor(diff)} liters wine needed.");

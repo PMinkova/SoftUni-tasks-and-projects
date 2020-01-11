@@ -19,7 +19,6 @@ namespace _08_FuelTank
                 {
                     Console.WriteLine($"You have enough diesel.");
                 }
-
             }
             else if (fuelType == "Gasoline")
             {
