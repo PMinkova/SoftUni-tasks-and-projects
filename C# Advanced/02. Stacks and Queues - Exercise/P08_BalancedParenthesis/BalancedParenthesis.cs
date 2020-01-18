@@ -11,28 +11,32 @@ namespace P08_BalancedParenthesis
         {
             string input = Console.ReadLine();
 
-            Stack<char> openingBrackets = new Stack<char>();
-
+            Stack<char> openParenthesis = new Stack<char>();
             bool areBalanced = true;
-
+     
             for (int i = 0; i < input.Length; i++)
             {
                 char currentParenthesis = input[i];
 
-                bool hasSameClosingBracket = openingBrackets.Peek() == '(' && currentParenthesis == ')' ||
-                               openingBrackets.Peek() == '{' && currentParenthesis == '}' ||
-                               openingBrackets.Peek() == '[' && currentParenthesis == ']';
-
-                bool isOpeningBracket =
-                    currentParenthesis == '(' || currentParenthesis == '[' || currentParenthesis == '{';
-
-                if (isOpeningBracket)
+                if (currentParenthesis == '(' || currentParenthesis == '[' || currentParenthesis == '{')
                 {
-                    openingBrackets.Push(currentParenthesis);
+                    openParenthesis.Push(currentParenthesis);
                 }
-                else if (hasSameClosingBracket && openingBrackets.Any())
+                else if ((currentParenthesis == ')' || currentParenthesis == ']' || currentParenthesis == '}') && openParenthesis.Any())
                 {
-                    openingBrackets.Pop();
+                    bool areEqual = openParenthesis.Peek() == '(' && currentParenthesis == ')' ||
+                                    openParenthesis.Peek() == '{' && currentParenthesis == '}' ||
+                                    openParenthesis.Peek() == '[' && currentParenthesis == ']';
+
+                    if (areEqual)
+                    {
+                        openParenthesis.Pop();
+                    }
+                    else
+                    {
+                        areBalanced = false;
+                        break;
+                    }
                 }
                 else
                 {
@@ -45,7 +49,7 @@ namespace P08_BalancedParenthesis
             {
                 Console.WriteLine("NO");
             }
-            else if (!openingBrackets.Any())
+            else if (!openParenthesis.Any())
             {
                 Console.WriteLine("YES");
             }
