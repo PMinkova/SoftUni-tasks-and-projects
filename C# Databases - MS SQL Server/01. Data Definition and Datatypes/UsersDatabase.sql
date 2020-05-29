@@ -1,0 +1,43 @@
+CREATE DATABASE Users
+
+USE Users
+
+CREATE TABLE Users(
+Id BIGINT PRIMARY KEY IDENTITY NOT NULL,
+Username VARCHAR(30) UNIQUE NOT NULL,
+[Password] VARCHAR(26) NOT NULL,
+ProfilePicture VARBINARY(MAX)
+CHECK(DATALENGTH(ProfilePicture) <= 900 * 1024),
+LastLoginTime DATETIME2 NOT NULL,
+IsDeleted BIT NOT NULL
+)
+
+INSERT INTO Users(Username, [Password], LastLoginTime, IsDeleted)
+	VALUES	
+			('Pesho1', 12345, '05.19.2020', 0),
+			('Pesho2', 12345, '05.19.2020', 0),
+			('Pesho3', 12345, '05.19.2020', 0),
+			('Pesho4', 12345, '05.19.2020', 0),
+			('Pesho5', 12345, '05.19.2020', 0)
+
+ALTER TABLE Users
+DROP CONSTRAINT [PK__Users__3214EC07D9266DEF]
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users_CompositeIdUsername
+PRIMARY KEY(Id, Username)
+
+ALTER TABLE Users
+ADD CONSTRAINT DF_Users_LastLoginTime
+DEFAULT GETDATE() FOR LastLoginTime
+
+ALTER TABLE Users
+ADD CONSTRAINT CK_Users_PasswordLength
+CHECK(LEN([Password]) >= 5)
+
+ALTER TABLE Users
+DROP CONSTRAINT PK_Users_CompositeIdUsername
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users_Id
+PRIMARY KEY(Id)
