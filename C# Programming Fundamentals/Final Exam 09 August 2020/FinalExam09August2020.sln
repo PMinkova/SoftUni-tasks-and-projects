@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_WorldTour", "01_WorldTour\01_WorldTour.csproj", "{B4AC306C-95CD-43EE-9B21-1B50515BD925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_DestinationMapper", "02_DestinationMapper\02_DestinationMapper.csproj", "{3393E800-B437-44C7-866C-5ADE95E94064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4AC306C-95CD-43EE-9B21-1B50515BD925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4AC306C-95CD-43EE-9B21-1B50515BD925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4AC306C-95CD-43EE-9B21-1B50515BD925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4AC306C-95CD-43EE-9B21-1B50515BD925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3393E800-B437-44C7-866C-5ADE95E94064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3393E800-B437-44C7-866C-5ADE95E94064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3393E800-B437-44C7-866C-5ADE95E94064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3393E800-B437-44C7-866C-5ADE95E94064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F30E50A-C568-4A44-AB48-FEED005A2592}
+	EndGlobalSection
+EndGlobal
