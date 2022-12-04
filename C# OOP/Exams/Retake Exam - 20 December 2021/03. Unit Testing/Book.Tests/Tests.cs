@@ -47,7 +47,6 @@
         public void FootnoteCountShouldReturnZeroWhenCollectionIsEmpty()
         {
             var book = new Book("Harry Potter", "J.K.Rowling");
-            Assert.AreEqual(0, book.FootnoteCount);
 
             var expectedCount = 0;
             var actualCount = book.FootnoteCount;
@@ -103,7 +102,6 @@
 
             var expected = "Footnote #1: Another text";
             var actual = book.FindFootnote(1);
-
 
             Assert.AreEqual(expected, actual);
         }
