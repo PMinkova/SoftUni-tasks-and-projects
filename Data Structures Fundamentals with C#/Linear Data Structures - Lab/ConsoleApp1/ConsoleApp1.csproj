@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Problem01.List.Tests\Problem01.List.Tests.csproj" />
+    <ProjectReference Include="..\Problem01.List\Problem01.List.csproj" />
+    <ProjectReference Include="..\Problem02.Stack.Tests\Problem02.Stack.Tests.csproj" />
+    <ProjectReference Include="..\Problem02.Stack\Problem02.Stack.csproj" />
+    <ProjectReference Include="..\Problem03.Queue.Tests\Problem03.Queue.Tests.csproj" />
+    <ProjectReference Include="..\Problem03.Queue\Problem03.Queue.csproj" />
+    <ProjectReference Include="..\Problem04.SinglyLinkedList\Problem04.SinglyLinkedList.csproj" />
+    <ProjectReference Include="..\SinglyLinkedList.Tests\Problem04.SinglyLinkedList.Tests.csproj" />
+  </ItemGroup>
+
+</Project>
