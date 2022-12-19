@@ -83,7 +83,7 @@
 
             if (this.Count == 1)
             {
-                this.tail = null;
+                this.head = this.tail = null;
             }
             else
             {
@@ -105,8 +105,7 @@
 
             if (this.Count == 1)
             {
-                this.head = null;
-                this.tail = null;
+                this.tail = this.head = null;
             }
             else
             {
