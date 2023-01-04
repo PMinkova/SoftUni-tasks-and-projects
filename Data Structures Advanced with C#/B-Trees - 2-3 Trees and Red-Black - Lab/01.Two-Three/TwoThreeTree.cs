@@ -1,8 +1,6 @@
 ﻿namespace _01.Two_Three
 {
     using System;
-    using System.ComponentModel;
-    using System.Runtime.InteropServices.ComTypes;
     using System.Text;
 
     public class TwoThreeTree<T> where T : IComparable<T>
@@ -26,13 +24,13 @@
                 return this.MergeNodes(node, new TreeNode<T>(element));
             }
 
-            if (node.IsTwoNode() || this.IsLesser(element, node.LeftKey))
+            if (IsLesser(element, node.LeftKey))
             {
                 var newNode = this.Insert(node.LeftChild, element);
 
                 return newNode == node.LeftChild ? node : this.MergeNodes(node, newNode);
             }
-            else if (this.IsLesser(element, node.RightKey))
+            else if (node.IsTwoNode() || IsLesser(element, node.RightKey))
             {
                 var newNode = this.Insert(node.MiddleChild, element);
 
@@ -51,68 +49,68 @@
             return element.CompareTo(key) < 0;
         }
 
-        private TreeNode<T> MergeNodes(TreeNode<T> currentNode, TreeNode<T> node)
+        private TreeNode<T> MergeNodes(TreeNode<T> current, TreeNode<T> node)
         {
-            if (currentNode.IsTwoNode())
+            if (current.IsTwoNode())
             {
-                if (this.IsLesser(currentNode.LeftKey, node.LeftKey))
+                if (IsLesser(current.LeftKey, node.LeftKey))
                 {
-                    currentNode.RightKey = node.LeftKey;
-                    currentNode.MiddleChild = node.LeftChild;
-                    currentNode.RightChild = node.MiddleChild;
+                    current.RightKey = node.LeftKey;
+                    current.MiddleChild = node.LeftChild;
+                    current.RightChild = node.MiddleChild;
                 }
                 else
                 {
-                    currentNode.RightKey = node.LeftKey;
-                    currentNode.RightChild = currentNode.MiddleChild;
-                    currentNode.MiddleChild = node.MiddleChild;
-                    currentNode.LeftChild = node.LeftChild;
-                    currentNode.LeftKey = node.LeftKey;
+                    current.RightKey = current.LeftKey;
+                    current.RightChild = current.MiddleChild;
+                    current.MiddleChild = node.MiddleChild;
+                    current.LeftChild = node.LeftChild;
+                    current.LeftKey = node.LeftKey;
                 }
 
-                return currentNode;
+                return current;
             }
-            else if (this.IsLesser(node.LeftKey, currentNode.LeftKey))
+            else if (IsLesser(node.LeftKey, current.LeftKey))
             {
-                var newNode = new TreeNode<T>(currentNode.LeftKey)
+                var newNode = new TreeNode<T>(current.LeftKey)
                 {
                     LeftChild = node,
-                    MiddleChild = currentNode
+                    MiddleChild = current
                 };
 
-                currentNode.LeftChild = currentNode.MiddleChild;
-                currentNode.MiddleChild = currentNode.RightChild;
-                currentNode.LeftKey = currentNode.RightKey;
-                currentNode.RightKey = default;
-                currentNode.RightChild = null;
+                current.LeftChild = current.MiddleChild;
+                current.MiddleChild = current.RightChild;
+                current.LeftKey = current.RightKey;
+                current.RightKey = default;
+                current.RightChild = null;
 
                 return newNode;
             }
-            else if (this.IsLesser(node.LeftKey, currentNode.RightKey))
+            else if (IsLesser(node.LeftKey, current.RightKey))
             {
-                node.MiddleChild = new TreeNode<T>(currentNode.RightKey)
+                node.MiddleChild = new TreeNode<T>(current.RightKey)
                 {
                     LeftChild = node.MiddleChild,
-                    MiddleChild = currentNode.RightChild
+                    MiddleChild = current.RightChild
                 };
 
-                node.LeftChild = currentNode;
-                currentNode.RightKey = default;
-                currentNode.RightChild = null;
+                node.LeftChild = current;
+                current.RightKey = default;
+                current.RightChild = null;
 
                 return node;
             }
             else
             {
-                var newNode = new TreeNode<T>(currentNode.RightKey)
+                var newNode = new TreeNode<T>(current.RightKey)
                 {
-                    LeftChild = currentNode,
+                    LeftChild = current,
                     MiddleChild = node
                 };
 
-                node.LeftChild = currentNode.RightChild;
-                currentNode.RightKey = default;
-                currentNode.RightChild = null;
+                node.LeftChild = current.RightChild;
+                current.RightKey = default;
+                current.RightChild = null;
 
                 return newNode;
             }
