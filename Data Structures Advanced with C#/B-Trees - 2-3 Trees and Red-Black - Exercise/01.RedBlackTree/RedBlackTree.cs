@@ -151,12 +151,12 @@
 
             if (!IsRed(node.Left) && !IsRed(node.Right))
             {
-                node = this.MoveRedLeft(node.Left);
+                node = this.MoveRedLeft(node);
             }
 
             node.Left = this.DeleteMin(node.Left);
 
-            return this.FixUp()
+            return this.FixUp(node);
         }
 
         private Node MoveRedLeft(Node node)
@@ -175,7 +175,22 @@
 
         private Node FixUp(Node node)
         {
-            throw new NotImplementedException();
+            if (this.IsRed(node.Right))
+            {
+                node = this.RotateLeft(node);
+            }
+
+            if (this.IsRed(node.Left) && this.IsRed(node.Left.Left))
+            {
+                node = this.RotateRight(node);
+            }
+
+            if (this.IsRed(node.Left) && this.IsRed(node.Right))
+            {
+                this.FlipColors(node);
+            }
+
+            return node;
         }
 
         public void DeleteMax()
