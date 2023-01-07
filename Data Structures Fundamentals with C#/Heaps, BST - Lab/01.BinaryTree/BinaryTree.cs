@@ -19,45 +19,23 @@
 
         public IAbstractBinaryTree<T> RightChild { get; private set; }
 
-        public string AsIndentedPreOrder(int indent)
+        public IEnumerable<IAbstractBinaryTree<T>> PreOrder()
         {
-            var sb = new StringBuilder();
+            var result = new List<IAbstractBinaryTree<T>>();
 
-            this.PreOrderDfs(sb, indent, this);
+            result.Add(this);
 
-            return sb.ToString().TrimEnd();
-        }
-
-        private void PreOrderDfs(StringBuilder sb, int indent, IAbstractBinaryTree<T> binaryTree)
-        {
-            sb
-                .Append(new string(' ', indent))
-                .AppendLine(binaryTree.Value.ToString());
-
-            if (binaryTree.LeftChild != null)
-            {
-                this.PreOrderDfs(sb, indent + 2, binaryTree.LeftChild);
-            }
-
-            if (binaryTree.RightChild != null)
-            {
-                this.PreOrderDfs(sb, indent + 2, binaryTree.RightChild);
-            }
-        }
-
-        public void ForEachInOrder(Action<T> action)
-        {
             if (this.LeftChild != null)
             {
-                this.LeftChild.ForEachInOrder(action);
+                result.AddRange(this.LeftChild.PreOrder());
             }
-
-            action.Invoke(this.Value);
 
             if (this.RightChild != null)
             {
-                this.RightChild.ForEachInOrder(action);
+                result.AddRange(this.RightChild.PreOrder());
             }
+
+            return result;
         }
 
         public IEnumerable<IAbstractBinaryTree<T>> InOrder()
@@ -98,23 +76,45 @@
             return result;
         }
 
-        public IEnumerable<IAbstractBinaryTree<T>> PreOrder()
+        public void ForEachInOrder(Action<T> action)
         {
-            var result = new List<IAbstractBinaryTree<T>>();
-
-            result.Add(this);
-
             if (this.LeftChild != null)
             {
-                result.AddRange(this.LeftChild.PreOrder());
+                this.LeftChild.ForEachInOrder(action);
             }
+
+            action.Invoke(this.Value);
 
             if (this.RightChild != null)
             {
-                result.AddRange(this.RightChild.PreOrder());
+                this.RightChild.ForEachInOrder(action);
+            }
+        }
+
+        public string AsIndentedPreOrder(int indent)
+        {
+            var sb = new StringBuilder();
+
+            this.PreOrderDfs(sb, indent, this);
+
+            return sb.ToString().TrimEnd();
+        }
+
+        private void PreOrderDfs(StringBuilder sb, int indent, IAbstractBinaryTree<T> binaryTree)
+        {
+            sb
+                .Append(new string(' ', indent))
+                .AppendLine(binaryTree.Value.ToString());
+
+            if (binaryTree.LeftChild != null)
+            {
+                this.PreOrderDfs(sb, indent + 2, binaryTree.LeftChild);
             }
 
-            return result;
+            if (binaryTree.RightChild != null)
+            {
+                this.PreOrderDfs(sb, indent + 2, binaryTree.RightChild);
+            }
         }
     }
 }
