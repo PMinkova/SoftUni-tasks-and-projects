@@ -1,7 +1,6 @@
 ﻿namespace _01.RedBlackTree
 {
     using System;
-    using System.Runtime.CompilerServices;
 
     public class RedBlackTree<T> where T : IComparable
     {
@@ -124,12 +123,71 @@
             return node;
         }
 
-        public void Delete(T key)
+        public void Delete(T element)
         {
             if (this.root == null)
             {
                 throw new InvalidOperationException();
             }
+
+            this.root = this.Delete(this.root, element);
+
+            if (this.root != null)
+            {
+                this.root.Color = Black;
+            }
+        }
+
+        private Node Delete(Node node, T element)
+        {
+            if (this.IsLesser(element, node.Value))
+            {
+                if (!this.IsRed(node.Left) && !this.IsRed((node.Right)))
+                {
+                    this.MoveRedLeft(node);
+                }
+
+                node.Left = this.Delete(node.Left, element);
+            }
+            else
+            {
+                if (this.IsRed(node.Left))
+                {
+                    node = this.RotateRight(node);
+                }
+
+                if (this.AreEqual(element, node.Value))
+                {
+                    return null;
+                }
+
+                if (!this.IsRed(node.Right) && !this.IsRed(node.Right.Left))
+                {
+                    this.MoveRedRight(node);
+                }
+
+                if (this.AreEqual(element, node.Value))
+                {
+                    node.Value = this.FindMinimalValueInSubtree(node.Right);
+                    node.Right = this.DeleteMin(node.Right);
+                }
+                else
+                {
+                    node.Right = this.Delete(node.Right, element);
+                }
+            }
+
+            return this.FixUp(node);
+        }
+
+        private T FindMinimalValueInSubtree(Node node)
+        {
+            if (node.Left == null)
+            {
+                return node.Value;
+            }
+
+            return FindMinimalValueInSubtree(node.Left);
         }
 
         public void DeleteMin()
@@ -140,6 +198,11 @@
             }
 
             var node = this.DeleteMin(this.root);
+
+            if (this.root != null)
+            {
+                this.root.Color = Black;
+            }
         }
 
         private Node DeleteMin(Node node)
@@ -199,6 +262,46 @@
             {
                 throw new InvalidOperationException();
             }
+
+            this.root = this.DeleteMax(this.root);
+
+            if (this.root != null)
+            {
+                this.root.Color = Black;
+            }
+        }
+
+        private Node DeleteMax(Node node)
+        {
+            if (this.IsRed(node.Left))
+            {
+                node = this.RotateRight(node);
+            }
+
+            if (node.Right == null)
+            {
+                return null;
+            }
+
+            if (!IsRed(node.Right) && IsRed(node.Right.Left))
+            {
+                node = this.MoveRedRight(node);
+            }
+
+            return this.FixUp(node);
+        }
+
+        private Node MoveRedRight(Node node)
+        {
+            this.FlipColors(node);
+
+            if (this.IsRed(node.Left.Left))
+            {
+                node = this.RotateRight(node);
+                FlipColors(node);
+            }
+
+            return node;
         }
 
         public int Count()

@@ -2,6 +2,8 @@
 
 namespace Demo
 {
+    using System;
+
     class Program
     {
         static void Main()
@@ -16,6 +18,8 @@ namespace Demo
             rbt.Insert(9);
             rbt.Insert(16);
             rbt.Insert(15);
+
+            Console.WriteLine(rbt);
         }
     }
 }
