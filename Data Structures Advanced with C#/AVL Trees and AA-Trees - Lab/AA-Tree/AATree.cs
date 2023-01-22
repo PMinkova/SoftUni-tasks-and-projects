@@ -152,7 +152,7 @@ namespace AA_Tree
 
         private Node Split(Node node)
         {
-            if (node.Right == null || node.Right.Right == null) // possible compile time error/ we don`t check if node.Right.Right exists
+            if (node.Right == null || node.Right.Right == null) 
             {
                 return node;
             }
