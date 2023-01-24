@@ -12,6 +12,8 @@ namespace Demo
             tree.Insert(50);
             tree.Insert(30);
             tree.Insert(10);
+
+            tree.Delete(30);
         }
     }
 }
