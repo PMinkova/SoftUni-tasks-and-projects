@@ -49,6 +49,11 @@
 
         public void Delete(T element)
         {
+            if (this.Root == null)
+            {
+                return;
+            }
+
             this.Root = this.Delete(this.Root, element);
         }
 
@@ -78,7 +83,7 @@
                 }
                 else
                 {
-                    Node temp = this.FindSmalllestElement(node.Right);
+                    Node temp = this.FindSmallestElement(node.Right);
                     node.Value = temp.Value;
 
                     node.Right = this.Delete(node.Right, temp.Value);
@@ -91,19 +96,25 @@
             return node;
         }
 
-        private Node FindSmalllestElement(Node node)
+        private Node FindSmallestElement(Node node)
         {
             if (node.Left == null)
             {
                 return node;
             }
 
-            return this.FindSmalllestElement(node.Left); 
+            return this.FindSmallestElement(node.Left); 
         }
 
         public void DeleteMin()
         {
-            throw new InvalidOperationException();
+            if (this.Root == null)
+            {
+                return;
+            }
+
+            var temp = this.FindSmallestElement(this.Root);
+            this.Root = this.Delete(this.Root, temp.Value);
         }
 
         public void Insert(T element)
