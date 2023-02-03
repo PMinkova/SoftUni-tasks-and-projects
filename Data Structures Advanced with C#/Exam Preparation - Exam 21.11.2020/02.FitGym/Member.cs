@@ -12,6 +12,8 @@ namespace _02.FitGym
             this.Visits = visits;
         }
 
+        public Trainer Trainer { get; set; }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -19,5 +21,22 @@ namespace _02.FitGym
         public DateTime RegistrationDate { get; set; }
 
         public int Visits { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as Member;
+
+            if (other == null || other.Id != this.Id)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
     }
 }
