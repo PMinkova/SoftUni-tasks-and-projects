@@ -17,21 +17,11 @@ namespace _02.FitGym
         }
         public void AddMember(Member member)
         {
-            if (this.members.ContainsKey(member.Id))
-            {
-                throw new ArgumentException();
-            }
-
             this.members.Add(member.Id, member);
         }
 
         public void HireTrainer(Trainer trainer)
         {
-            if (this.trainers.ContainsKey(trainer.Id))
-            {
-                throw new ArgumentException();
-            }
-
             this.trainers.Add(trainer.Id, trainer);
         }
 
