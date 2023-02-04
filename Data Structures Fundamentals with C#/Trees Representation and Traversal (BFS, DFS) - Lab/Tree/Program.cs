@@ -17,7 +17,9 @@
                               new Tree<int>(3,
                                   new Tree<int>(7)));
 
-            tree.RemoveNode(1);
+            var result = tree.DfsWithRecursion();
+
+            Console.WriteLine(String.Join(" ", result));
         }
     }
 }
