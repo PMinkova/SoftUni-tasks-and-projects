@@ -15,6 +15,9 @@
             binarySearchTree.Insert(6); 
             binarySearchTree.Insert(7); 
             binarySearchTree.Insert(5); 
+            binarySearchTree.Insert(10); 
+            binarySearchTree.Insert(9); 
+            binarySearchTree.Insert(12); 
 
             var newTree = binarySearchTree.Search(6);
             
