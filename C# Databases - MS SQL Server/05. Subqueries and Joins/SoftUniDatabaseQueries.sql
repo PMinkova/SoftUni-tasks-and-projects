@@ -105,3 +105,55 @@ WHERE
 
 -- Problem 08
 
+SELECT 
+  e.EmployeeID, 
+  e.FirstName, 
+  CASE WHEN p.StartDate >= '2005-01-01' THEN NULL ELSE p.[Name] END AS ProjectName
+FROM 
+  Employees AS e
+  JOIN EmployeesProjects AS ep ON e.EmployeeID = ep.EmployeeID
+  JOIN Projects AS p ON ep.ProjectID = p.ProjectID
+WHERE 
+  e.EmployeeID = 24
+
+
+-- Problem 09
+
+SELECT 
+  e.EmployeeID, 
+  e.FirstName, 
+  e.ManagerID, 
+  m.FirstName AS ManagerName
+FROM 
+  Employees AS e 
+  JOIN Employees AS m ON e.ManagerID = m.EmployeeID 
+WHERE 
+  e.ManagerID IN (3, 7)
+
+
+ -- Problem 10
+
+SELECT 
+  TOP 50 e.EmployeeID, 
+  CONCAT(e.FirstName, ' ', e.LastName) AS EmployeeName, 
+  CONCAT(m.FirstName, ' ', m.LastName) AS ManagerName, 
+  d.[Name] AS DepartmentName 
+FROM 
+  Employees as e 
+  JOIN Employees as m ON e.ManagerID = m.EmployeeID 
+  JOIN Departments as d ON d.DepartmentID = e.DepartmentID
+
+
+-- Problem 11
+
+SELECT 
+  MIN(AvgSalary) AS MinAverageSalary 
+FROM 
+  (
+    SELECT 
+      AVG(Salary) AS AvgSalary 
+    FROM 
+      Employees 
+    GROUP BY 
+      DepartmentID
+  ) AS DepartmentsSalary;
