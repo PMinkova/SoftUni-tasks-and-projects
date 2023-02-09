@@ -94,7 +94,6 @@ ORDER BY
   DepositGroup
   
 
-
 -- Problem 09
 
 SELECT 
@@ -115,3 +114,55 @@ FROM
   ) AS AgeGroupSubquery 
 GROUP BY 
   AgeGroup
+
+
+-- Problem 10
+
+SELECT 
+  LEFT(FirstName, 1) FROM WizzardDeposits
+WHERE 
+  DepositGroup = 'Troll Chest'
+GROUP BY 
+  LEFT(FirstName, 1)
+
+
+-- Problem 11
+
+SELECT 
+  DepositGroup, 
+  IsDepositExpired, 
+  AVG(DepositInterest) AS AverageInterest 
+FROM 
+  WizzardDeposits 
+WHERE 
+  DepositStartDate > CONVERT(DATETIME, 01 / 01 / 1985, 120) 
+GROUP BY 
+  DepositGroup, 
+  IsDepositExpired 
+ORDER BY 
+  DepositGroup DESC, 
+  IsDepositExpired
+
+
+--Problem 12
+
+SELECT 
+  SUM([Difference]) AS SumDifference 
+FROM 
+  (
+    SELECT 
+      wd1.FirstName AS [Host Wizzard], 
+      wd1.DepositAmount AS [Host Wizard Deposit], 
+      wd2.FirstName AS [Guest Wizard], 
+      wd2.DepositAmount AS [Guest Wizzard Deposit], 
+      (
+        wd1.DepositAmount - wd2.DepositAmount
+      ) AS [Difference] 
+    FROM 
+      WizzardDeposits AS wd1 
+      JOIN WizzardDeposits AS wd2 ON wd1.Id + 1 = wd2.Id
+  ) AS DepositDifferenceSubquery
+
+
+
+
