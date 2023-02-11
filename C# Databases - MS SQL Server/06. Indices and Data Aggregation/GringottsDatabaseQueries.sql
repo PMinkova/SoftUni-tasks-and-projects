@@ -135,7 +135,7 @@ SELECT
 FROM 
   WizzardDeposits 
 WHERE 
-  DepositStartDate > CONVERT(DATETIME, 01 / 01 / 1985, 120) 
+  DepositStartDate > '1985-01-01'
 GROUP BY 
   DepositGroup, 
   IsDepositExpired 
